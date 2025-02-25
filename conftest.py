@@ -1,12 +1,16 @@
 import pytest
 from unittest.mock import Mock
+from praktikum.burger import Burger
+from praktikum.database import Database
+from praktikum.bun import Bun
+from praktikum.ingredient import Ingredient
 
 
 @pytest.fixture
 def mock_bun():
     bun = Mock()
     bun.get_name.return_value = "black"
-    bun.get_price.return_value = "100"
+    bun.get_price.return_value = 100
     return bun
 
 @pytest.fixture
@@ -16,3 +20,11 @@ def mock_ingredient():
     ingredient.get_name.return_value = "hot sauce"
     ingredient.get_price.return_value = 100
     return ingredient
+
+@pytest.fixture
+def burger():
+    return Burger()
+
+@pytest.fixture
+def database():
+    return Database()

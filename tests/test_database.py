@@ -1,18 +1,10 @@
 import pytest
-from praktikum.database import Database
 from praktikum.bun import Bun
 from praktikum.ingredient import Ingredient
 from praktikum.ingredient_types import INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FILLING
 
 
 class TestDatabase:
-
-    @pytest.fixture
-    def database(self):
-        """
-        Фикстура для создания экземпляра Database.
-        """
-        return Database()
 
     def test_available_buns(self, database):
         """
